@@ -7,7 +7,15 @@
         <ul>
             @forelse ($students as $student)
                 <li class="card my-3 p-4">
-                    <h1>{{ $student->first_name }} {{ $student->last_name }}</h1>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h1>{{ $student->first_name }} {{ $student->last_name }}</h1>
+                        <form data-name="{{ $student->first_name }} {{ $student->last_name }}" class="delete-form"
+                            action="{{ route('students.drop', $student) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Elimina defnitivamente</button>
+                        </form>
+                    </div>
                 </li>
             @empty
                 <h1 class="text-danger">Non ci sono studenti nel cestino</h1>
