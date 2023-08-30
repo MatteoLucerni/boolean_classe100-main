@@ -4,10 +4,14 @@
 @section('main')
     <div class="container my-5">
         <a class="d-block text-center" href="{{ route('students.index') }}">Torna alla lista studenti</a>
-        <div class="buttons text-center mt-5">
+        <div class="buttons d-flex justify-content-center mt-5">
             <a class="btn btn-warning mx-3" href="{{ route('students.edit', $student) }}">Modifica
                 studente</a>
-            <a class="btn btn-danger" href="{{ route('students.destroy', $student) }}">Elimina studente</a>
+            <form action="{{ route('students.destroy', $student) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger">Elimina studente</button>
+            </form>
         </div>
         <div class="card p-5 mt-5">
             <h1>
