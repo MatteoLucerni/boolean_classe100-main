@@ -18,6 +18,11 @@ class StudentSeeder extends Seeder
             $student = new Student();
             $student->first_name = $faker->firstName();
             $student->last_name = $faker->lastName();
+            $student->age = $faker->numberBetween(18, 70);
+            $student->address = $faker->address();
+            $student->city = $faker->city();
+            $student->country = $faker->country();
+            $student->post_code = $faker->postcode();
             $student->save();
         }
     }
