@@ -10,9 +10,15 @@ class StudentController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $students = Student::all();
+
+        $filter = $request->query('filter');
+
+        if ($filter) $students = Student::where('first_name', 'LIKE', "%$filter%")->orWhere('last_name', 'LIKE', "%$filter%")->get();
+        else $students = Student::all();
+
+
         return view('students.index', compact('students'));
     }
 
