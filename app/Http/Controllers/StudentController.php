@@ -87,12 +87,17 @@ class StudentController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * .
      */
     public function trash()
     {
-        $students = [];
-        // $students = Student::onlyTrashed()->get();
+        $students = Student::onlyTrashed()->get();
         return view('students.trash', compact('students'));
+    }
+
+    public function dropAll()
+    {
+        $students = Student::onlyTrashed()->forceDelete();
+        return to_route('students.trash');
     }
 }
