@@ -2,8 +2,18 @@
 
 
 @section('main')
-    <div class="container">
-        <h2><a href="#">Index</a></h2>
+    <div class="container py-5">
+        <h1 class="text-center">STUDENTI CLASSE 100#</h1>
+        <div class="d-flex justify-content-end ">
+            <form action="{{ route('students.index') }}" method="GET">
+                @csrf
+                @method('')
+                <div role="search" class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </div>
+            </form>
+        </div>
         <ul>
             @forelse ($students as $student)
                 <li class="card my-3 p-4">
