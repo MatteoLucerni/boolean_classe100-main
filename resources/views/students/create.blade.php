@@ -3,6 +3,9 @@
 @section('main')
     <div class="container mt-5">
         <h1 class="text-center my-5">AGGIUNGI UN NUOVO STUDENTE</h1>
+        <div class="d-flex justify-content-end">
+            <a href="{{ route('students.index') }}" class="btn btn-secondary"><-- Torna indietro</a>
+        </div>
         <div class="form" method="POST" action="{{ route('students.store', $student) }}">
             @csrf
             <div class="row">
