@@ -13,6 +13,8 @@
                             <h3>Cognome: {{ $student->last_name }}</h3>
                         </div>
                         <div class="col-6 right-side d-flex align-items-center ">
+                            <a class="btn btn-info text-white me-3" href="{{ route('students.show', $student) }}">Dettagli
+                                studente</a>
                             <a class="btn btn-success" href="{{ route('students.create') }}">Aggiungi studente</a>
                             <a class="btn btn-warning mx-3" href="{{ route('students.edit', $student) }}">Modifica
                                 studente</a>
