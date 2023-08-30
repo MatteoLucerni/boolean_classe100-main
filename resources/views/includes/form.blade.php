@@ -9,8 +9,8 @@
     <div class="col-4">
         <div class="mb-3">
             <label for="fname" class="form-label"><strong>Nome</strong></label>
-            <input type="text" class="form-control" id="fname" name="first_name"
-                value="{{ old('fist_name', $student->first_name) }}" autofocus>
+            <input type="text" class="form-control @error('first_name') is-invalid @enderror" id="fname"
+                name="first_name" value="{{ old('fist_name', $student->first_name) }}" autofocus>
             @error('first_name')
                 <div class="text-danger">
                     {{ $message }}
@@ -21,8 +21,8 @@
     <div class="col-4">
         <div class="mb-3">
             <label for="lname" class="form-label"><strong>Cognome</strong></label>
-            <input type="text" class="form-control" id="lname" name="last_name"
-                value="{{ old('last_name', $student->last_name) }}">
+            <input type="text" class="form-control @error('last_name') is-invalid @enderror" id="lname"
+                name="last_name" value="{{ old('last_name', $student->last_name) }}">
             @error('last_name')
                 <div class="text-danger">
                     {{ $message }}
@@ -32,8 +32,8 @@
     </div>
     <div class="col-2">
         <label for="age" class="form-label"><strong>Età</strong></label>
-        <input type="number" class="form-control" id="age" min="18" max="100" name="age"
-            value="{{ old('age', $student->age) }}">
+        <input type="number" class="form-control @error('age') is-invalid @enderror" id="age" min="18"
+            max="100" name="age" value="{{ old('age', $student->age) }}">
         @error('age')
             <div class="text-danger">
                 {{ $message }}
@@ -63,8 +63,13 @@
     </div>
     <div class="col-2">
         <label for="postal-code" class="form-label"><strong>Codice postale</strong></label>
-        <input type="number" class="form-control" id="postal-code" name="post_code"
-            value="{{ old('post_code', $student->post_code) }}">
+        <input type="number" class="form-control @error('post_code') is-invalid @enderror" id="postal-code"
+            name="post_code" value="{{ old('post_code', $student->post_code) }}">
+        @error('post_code')
+            <div class="text-danger">
+                {{ $message }}
+            </div>
+        @enderror
     </div>
 </div>
 <div class="buttons mt-5 d-flex justify-content-center">
