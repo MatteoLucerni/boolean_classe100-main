@@ -21,7 +21,8 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        $student = new Student();
+        return view('students.create', compact('student'));
     }
 
     /**
