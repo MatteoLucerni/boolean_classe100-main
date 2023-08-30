@@ -31,6 +31,9 @@
                 <h1 class="text-danger text-center">Nessuno studente disponibile</h1>
             @endforelse
         </ul>
+        <div class="text-center my-5">
+            <a class="btn btn-secondary" href="{{ route('students.trash') }}">Vai al Cestino</a>
+        </div>
     </div>
 @endsection
 

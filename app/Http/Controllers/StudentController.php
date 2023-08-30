@@ -85,4 +85,14 @@ class StudentController extends Controller
         $student->delete();
         return redirect()->route('students.index');
     }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function trash()
+    {
+        $students = [];
+        // $students = Student::onlyTrashed()->get();
+        return view('students.trash', compact('students'));
+    }
 }
