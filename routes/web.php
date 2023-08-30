@@ -20,8 +20,8 @@ Route::get('/', function () {
 
 
 Route::get('/students/trash', [StudentController::class, 'trash'])->name('students.trash');
-Route::delete('/students/trash/drop', [StudentController::class, 'dropAll'])->name('students.dropAll');
 Route::delete('/students/trash/{team}/drop', [StudentController::class, 'drop'])->name('students.drop');
+Route::delete('/students/trash/drop', [StudentController::class, 'dropAll'])->name('students.dropAll');
 Route::patch('/students/{team}/restore', [StudentController::class, 'restore'])->name('students.restore');
 
 Route::resource('students', StudentController::class);
