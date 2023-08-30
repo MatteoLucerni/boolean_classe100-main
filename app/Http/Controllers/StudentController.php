@@ -132,4 +132,11 @@ class StudentController extends Controller
         $student->forceDelete();
         return to_route('students.trash');
     }
+
+    public function restore($id)
+    {
+        $student = Student::onlyTrashed()->findOrFail($id);
+        $student->restore();
+        return to_route('students.trash');
+    }
 }
