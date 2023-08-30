@@ -18,11 +18,11 @@
                             <a class="btn btn-success" href="{{ route('students.create') }}">Aggiungi studente</a>
                             <a class="btn btn-warning mx-3" href="{{ route('students.edit', $student) }}">Modifica
                                 studente</a>
-                                <form action="{{ route('students.destroy', $student) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Elimina studente</button>
-                                </form>                                
+                            <form action="{{ route('students.destroy', $student) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Elimina studente</button>
+                            </form>                                
                         </div>
                     </div>
                 </li>
