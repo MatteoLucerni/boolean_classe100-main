@@ -53,7 +53,7 @@ class StudentController extends Controller
         $student->fill($data);
         $student->save();
 
-        return to_route('students.index');
+        return to_route('students.show', $student);
     }
 
     /**
