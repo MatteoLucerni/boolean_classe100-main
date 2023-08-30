@@ -18,11 +18,12 @@
                             <a class="btn btn-success" href="{{ route('students.create') }}">Aggiungi studente</a>
                             <a class="btn btn-warning mx-3" href="{{ route('students.edit', $student) }}">Modifica
                                 studente</a>
-                            <form action="{{ route('students.destroy', $student) }}" method="POST">
+                            <form data-name="{{ $student->first_name }} {{ $student->last_name }}" class="delete-form"
+                                action="{{ route('students.destroy', $student) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Elimina studente</button>
-                            </form>                                
+                            </form>
                         </div>
                     </div>
                 </li>
@@ -31,4 +32,8 @@
             @endforelse
         </ul>
     </div>
+@endsection
+
+@section('scripts')
+    @vite('resources/js/alert.js')
 @endsection
