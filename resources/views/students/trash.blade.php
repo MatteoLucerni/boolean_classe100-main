@@ -13,7 +13,7 @@
                             action="{{ route('students.drop', $student) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Elimina defnitivamente</button>
+                            <button type="submit" class="btn btn-danger">Elimina definitivamente</button>
                         </form>
                     </div>
                 </li>
@@ -25,7 +25,7 @@
             @csrf
             @method('DELETE')
             <button class="btn btn-danger">
-                SVUOTA CENSTINO
+                SVUOTA CESTINO
             </button>
         </form>
         <a href="{{ route('students.index') }}">Torna alla lista studenti</a>
