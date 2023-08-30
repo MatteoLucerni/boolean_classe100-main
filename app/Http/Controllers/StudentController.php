@@ -98,6 +98,13 @@ class StudentController extends Controller
     public function dropAll()
     {
         $students = Student::onlyTrashed()->forceDelete();
+        return to_route('students.trash', compact('students'));
+    }
+
+    public function drop(string $id)
+    {
+        $student = Student::onlyTrashed()->findOrFail($id);
+        $student->forceDelete();
         return to_route('students.trash');
     }
 }
