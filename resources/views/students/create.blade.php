@@ -23,8 +23,7 @@
                 </div>
                 <div class="col-2">
                     <label for="age" class="form-label"><strong>Età</strong></label>
-                    <input type="number" class="form-control" id="lname" min="18" max="100"
-                        name="last_name">
+                    <input type="number" class="form-control" id="age" min="18" max="100" name="age">
                 </div>
             </div>
             <div class="row">
@@ -36,13 +35,13 @@
                 </div>
                 <div class="col-4">
                     <label for="city" class="form-label"><strong>Città</strong></label>
-                    <input type="text" class="form-control" id="address" name="city">
+                    <input type="text" class="form-control" id="city" name="city">
                 </div>
             </div>
             <div class="row">
                 <div class="col-4">
                     <label for="country" class="form-label"><strong>Paese</strong></label>
-                    <input type="text" class="form-control" id="address" name="country">
+                    <input type="text" class="form-control" id="country" name="country">
                 </div>
                 <div class="col-2">
                     <label for="postal-code" class="form-label"><strong>Codice postale</strong></label>
