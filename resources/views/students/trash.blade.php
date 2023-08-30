@@ -13,7 +13,7 @@
                 <h1 class="text-danger">Non ci sono studenti nel cestino</h1>
             @endforelse
         </ul>
-        <form action="{{ route('students.dropAll') }}" method="POST">
+        <form action="{{ route('students.dropAll') }}" method="POST" class="delete-form">
             @csrf
             @method('DELETE')
             <button class="btn btn-danger">
