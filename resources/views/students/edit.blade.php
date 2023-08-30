@@ -42,7 +42,7 @@
                 </div>
                 <div class="col-2 mb-5">
                     <label for="post_code" class="form-label">CAP</label>
-                    <input type="text" class="form-control" value="{{ old('post_code', $student->post_code) }}"
+                    <input type="number" class="form-control" value="{{ old('post_code', $student->post_code) }}"
                         id="post_code" name="post_code" placeholder="CAP">
                 </div>
             </div>

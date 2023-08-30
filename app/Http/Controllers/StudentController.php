@@ -36,11 +36,18 @@ class StudentController extends Controller
 
             'first_name' => 'required|string',
             'last_name' => 'required|string',
+            'age' => 'required|numeric',
+            'address' => 'nullable|string',
+            'city' => 'nullable|string',
+            'country' => 'nullable|string',
+            'post_code' => 'nullable|numeric',
         ], [
             'first_name.required' => 'Questo campo è obbligatorio',
             'last_name.required' => 'Questo campo è obbligatorio',
+            'age.required' => 'Questo campo è obbligatorio',
+            'age.numeric' => 'Questo campo deve essere numerico',
+            'post_code.numeric' => 'Questo campo deve essere numerico',
         ]);
-
 
         $student = new Student();
         $student->fill($data);
@@ -70,6 +77,24 @@ class StudentController extends Controller
      */
     public function update(Request $request, Student $student)
     {
+        $request->validate([
+
+            'first_name' => 'required|string',
+            'last_name' => 'required|string',
+            'age' => 'required|numeric',
+            'address' => 'nullable|string',
+            'city' => 'nullable|string',
+            'country' => 'nullable|string',
+            'post_code' => 'nullable|numeric',
+        ], [
+            'first_name.required' => 'Questo campo è obbligatorio',
+            'last_name.required' => 'Questo campo è obbligatorio',
+            'age.required' => 'Questo campo è obbligatorio',
+            'age.numeric' => 'Questo campo deve essere numerico',
+            'post_code.numeric' => 'Questo campo deve essere numerico',
+        ]);
+
+
         $data = $request->all();
 
         $student->update($data);
