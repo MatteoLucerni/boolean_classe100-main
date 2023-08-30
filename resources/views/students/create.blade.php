@@ -6,7 +6,7 @@
         <div class="d-flex justify-content-end">
             <a href="{{ route('students.index') }}" class="btn btn-secondary"><-- Torna indietro</a>
         </div>
-        <div class="form" method="POST" action="{{ route('students.store', $student) }}">
+        <form method="POST" action="{{ route('students.store', $student) }}">
             @csrf
             <div class="row">
                 <div class="col-4">
@@ -53,6 +53,6 @@
                 <button type="reset" class="btn btn-warning me-3">Reset</button>
                 <button type="submit" class="btn btn-success ">Invia</button>
             </div>
-        </div>
+        </form>
     </div>
 @endsection
