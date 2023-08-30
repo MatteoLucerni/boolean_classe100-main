@@ -30,7 +30,23 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $request->validate([
+
+            'first_name' => 'required|string',
+            'last_name' => 'required|string',
+        ], [
+            'first_name.required' => 'Questo campo è obbligatorio',
+            'last_name.required' => 'Questo campo è obbligatorio',
+        ]);
+
+
+        $student = new Student();
+        $student->fill($data);
+        $student->save();
+
+        return to_route('students.index');
     }
 
     /**
