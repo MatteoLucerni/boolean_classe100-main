@@ -10,8 +10,11 @@
 </head>
 
 <body>
+    @include('includes.header')
     <main>
-        @yield('main')
+        <section class="background-custom">
+            @yield('main')
+        </section>
     </main>
     @yield('scripts')
 </body>
