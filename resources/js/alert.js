@@ -1,9 +1,14 @@
-console.log("js ok");
+console.log("JS LOADED");
 
-function ShowAlert(message) {
-    alert(message);
-}
+const deleteForm = document.querySelectorAll(".delete-form");
 
-function ConfirmDelete() {
-    return confirm("Sei sicuro di voler eliminare?");
-}
+deleteForm.forEach((form) => {
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const studentName = form.dataset.name;
+        const hasConfirmed = confirm(
+            `Sei sicuro di voler eliminare lo studente ${studentName}?`
+        );
+        if (hasConfirmed) form.submit();
+    });
+});
